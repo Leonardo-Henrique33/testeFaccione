@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<head> 
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>FACCIONE MODAS | Elegância & Identidade</title>
 
-<link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500&display=swap"
         rel="stylesheet">
-        
 
     <style>
-        :root { 
+        :root {
             --gold: #d8b37d;
             --dark: #0a0a0a;
             --light: #fdfdfd;
@@ -153,6 +152,9 @@
             transition: var(--transition);
             background: transparent;
             cursor: pointer;
+
+            /* ADICIONADO */
+            margin-top: 30px;
         }
 
         .btn:hover {
@@ -244,6 +246,10 @@
         .sobre img {
             width: 100%;
             filter: grayscale(20%);
+        }
+
+        .sobre-text p {
+            margin-bottom: 35px;
         }
 
         /* MODAL DE CONTATO */
@@ -340,10 +346,16 @@
         <div class="hero-content">
             <div
                 style="color: var(--gold); letter-spacing: 8px; font-size: 0.75rem; margin-bottom: 25px; text-transform: uppercase;">
-                Elegância & Identidade</div>
+                Elegância & Identidade
+            </div>
+
             <h1>FACCIONE MODAS</h1>
+
             <p>Moda social masculina e feminina com curadoria exclusiva.</p>
-            <a onclick="toggleModal()" class="btn">SOLICITAR ATENDIMENTO</a>
+
+            <a onclick="toggleModal()" class="btn">
+                SOLICITAR ATENDIMENTO
+            </a>
         </div>
     </section>
 
@@ -355,7 +367,8 @@
         <div class="cards">
             <div class="card reveal">
                 <div class="card-img-box">
-                    <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?q=80&w=1200" alt="Masculino">
+                    <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?q=80&w=1200"
+                        alt="Masculino">
                 </div>
                 <div class="card-content">
                     <h3>MASCULINO</h3>
@@ -365,7 +378,8 @@
 
             <div class="card reveal" style="transition-delay: 0.2s;">
                 <div class="card-img-box">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200" alt="Feminino">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200"
+                        alt="Feminino">
                 </div>
                 <div class="card-content">
                     <h3>FEMININO</h3>
@@ -390,10 +404,16 @@
         <div class="reveal">
             <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200" alt="Sobre">
         </div>
+
         <div class="sobre-text reveal">
-            <h2 style="font-family:'Cormorant Garamond', serif; font-size: 3.5rem; margin-bottom: 20px;">A ESSÊNCIA
-                FACCIONE</h2>
-            <p>Nossa missão é vestir personalidades com perfeição técnica e estética atemporal.</p>
+            <h2 style="font-family:'Cormorant Garamond', serif; font-size: 3.5rem; margin-bottom: 20px;">
+                A ESSÊNCIA FACCIONE
+            </h2>
+
+            <p>
+                Nossa missão é vestir personalidades com perfeição técnica e estética atemporal.
+            </p>
+
             <a href="#" class="btn">NOSSA HISTÓRIA</a>
         </div>
     </section>
@@ -401,10 +421,15 @@
     <div class="modal-overlay" id="contactModal">
         <div class="modal-content">
             <div class="modal-close" onclick="toggleModal()">✕</div>
-            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 10px;">CONTATO</h2>
+
+            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 10px;">
+                CONTATO
+            </h2>
+
             <p
                 style="font-size: 0.7rem; letter-spacing: 3px; color: var(--gold); margin-bottom: 40px; text-transform: uppercase;">
-                Atendimento Comercial</p>
+                Atendimento Comercial
+            </p>
 
             <a href="https://wa.me/5519995204807" target="_blank" class="contact-link">
                 WHATSAPP: (19) 99520-4807
@@ -414,8 +439,10 @@
                 INSTAGRAM: @faccione__modas
             </a>
 
-            <p style="margin-top: 30px; font-family: 'Cormorant Garamond', serif; font-style: italic; color: #999;">Será
-                um prazer atendê-lo.</p>
+            <p
+                style="margin-top: 30px; font-family: 'Cormorant Garamond', serif; font-style: italic; color: #999;">
+                Será um prazer atendê-lo.
+            </p>
         </div>
     </div>
 
@@ -426,9 +453,12 @@
     <script>
         // Header Background change on scroll
         const navbar = document.getElementById("navbar");
+
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 100) navbar.classList.add("active");
-            else navbar.classList.remove("active");
+            if (window.scrollY > 100)
+                navbar.classList.add("active");
+            else
+                navbar.classList.remove("active");
         });
 
         // Modal Toggle Function
@@ -440,22 +470,28 @@
         // Close modal if clicking outside the white box
         window.onclick = function (event) {
             const modal = document.getElementById("contactModal");
-            if (event.target == modal) modal.classList.remove("active");
+
+            if (event.target == modal)
+                modal.classList.remove("active");
         }
 
         // Scroll Reveal Animation
         const reveal = () => {
             const reveals = document.querySelectorAll(".reveal");
+
             for (let i = 0; i < reveals.length; i++) {
                 let windowHeight = window.innerHeight;
                 let elementTop = reveals[i].getBoundingClientRect().top;
-                if (elementTop < windowHeight - 150) reveals[i].classList.add("active");
+
+                if (elementTop < windowHeight - 150)
+                    reveals[i].classList.add("active");
             }
         };
+
         window.addEventListener("scroll", reveal);
-        reveal(); // Run once on load
+        reveal();
     </script>
 
 </body>
 
-</html>
+</html> 
