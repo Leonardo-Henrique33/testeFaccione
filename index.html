@@ -4,494 +4,143 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="FACCIONE MODAS — moda social masculina e feminina com curadoria exclusiva. Elegância, identidade e atendimento premium." />
+    <meta name="theme-color" content="#0a0a0a" />
+
+    <meta property="og:title" content="FACCIONE MODAS | Elegância & Identidade" />
+    <meta property="og:description"
+        content="Moda social masculina e feminina com curadoria exclusiva. Elegância e identidade." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=1200&auto=format&fit=crop" />
+    <meta property="og:locale" content="pt_BR" />
 
     <title>FACCIONE MODAS | Elegância & Identidade</title>
 
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500&display=swap" />
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500&display=swap"
-        rel="stylesheet">
-
-    <style>
-        :root {
-            --gold: #d8b37d;
-            --dark: #0a0a0a;
-            --light: #fdfdfd;
-            --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: var(--light);
-            color: var(--dark);
-            overflow-x: hidden;
-            font-family: 'Montserrat', sans-serif;
-            opacity: 0;
-            animation: bodyReveal 1.8s forwards;
-        }
-
-        @keyframes bodyReveal {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* HEADER */
-        header {
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 999;
-            padding: 35px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: transparent;
-            transition: var(--transition);
-        }
-
-        header.active {
-            padding: 20px 8%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-        }
-
-        .logo {
-            color: white;
-            font-size: 2.4rem;
-            font-family: 'Cormorant Garamond', serif;
-            letter-spacing: 6px;
-            font-weight: 600;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 40px;
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            font-weight: 300;
-            transition: 0.3s;
-            cursor: pointer;
-            position: relative;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -5px;
-            left: 0;
-            background: var(--gold);
-            transition: 0.3s;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* HERO */
-        .hero {
-            width: 100%;
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 20px;
-        }
-
-        .hero-content {
-            opacity: 0;
-            transform: translateY(40px) scale(1.05);
-            animation: heroEnter 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: 0.3s;
-        }
-
-        @keyframes heroEnter {
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .hero h1 {
-            font-size: 5.5rem;
-            font-family: 'Cormorant Garamond', serif;
-            margin-bottom: 25px;
-            line-height: 1.1;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 18px 45px;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            text-decoration: none;
-            letter-spacing: 3px;
-            font-size: 0.8rem;
-            transition: var(--transition);
-            background: transparent;
-            cursor: pointer;
-
-            /* ADICIONADO */
-            margin-top: 30px;
-        }
-
-        .btn:hover {
-            background: var(--gold);
-            color: black;
-            transform: translateY(-5px);
-        }
-
-        /* SEÇÕES */
-        section {
-            padding: 120px 8%;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: var(--transition);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 3.2rem;
-            font-weight: 500;
-            margin-bottom: 80px;
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        /* CARDS */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .card {
-            background: white;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .card-img-box {
-            width: 100%;
-            height: 550px;
-            overflow: hidden;
-        }
-
-        .card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .card:hover img {
-            transform: scale(1.1);
-        }
-
-        .card-content {
-            padding: 35px 20px;
-            text-align: center;
-        }
-
-        .card-content h3 {
-            letter-spacing: 4px;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
-
-        .card-content p {
-            color: #777;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* SOBRE */
-        .sobre {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .sobre img {
-            width: 100%;
-            filter: grayscale(20%);
-        }
-
-        .sobre-text p {
-            margin-bottom: 35px;
-        }
-
-        /* MODAL DE CONTATO */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(8px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-content {
-            background: var(--light);
-            width: 90%;
-            max-width: 450px;
-            padding: 60px 40px;
-            text-align: center;
-            position: relative;
-            transform: translateY(30px);
-            transition: var(--transition);
-            border-top: 4px solid var(--gold);
-        }
-
-        .modal-overlay.active .modal-content {
-            transform: translateY(0);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .contact-link {
-            display: block;
-            text-decoration: none;
-            color: var(--dark);
-            padding: 20px;
-            margin-bottom: 15px;
-            border: 1px solid #eee;
-            transition: 0.3s;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            font-weight: 500;
-        }
-
-        .contact-link:hover {
-            border-color: var(--gold);
-            background: #f9f9f9;
-            transform: translateX(5px);
-        }
-
-        footer {
-            background: black;
-            color: #444;
-            text-align: center;
-            padding: 80px 40px;
-            font-size: 0.7rem;
-            letter-spacing: 4px;
-        }
-    </style>
-
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 
-    <header id="navbar">
-        <div class="logo">FACCIONE</div>
-        <nav>
-            <a href="#">INÍCIO</a>
-            <a href="#colecoes">COLEÇÕES</a>
-            <a href="#sobre">SOBRE</a>
-            <a onclick="toggleModal()">CONTATO</a>
+    <header id="navbar" class="header" role="banner">
+        <a href="#" class="header__logo" aria-label="FACCIONE — voltar ao início">FACCIONE</a>
+        <nav class="header__nav" aria-label="Navegação principal">
+            <a href="#" class="header__nav-link">INÍCIO</a>
+            <a href="#colecoes" class="header__nav-link">COLEÇÕES</a>
+            <a href="#sobre" class="header__nav-link">SOBRE</a>
+            <button type="button" class="header__nav-link" data-action="toggle-modal">CONTATO</button>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <div
-                style="color: var(--gold); letter-spacing: 8px; font-size: 0.75rem; margin-bottom: 25px; text-transform: uppercase;">
-                Elegância & Identidade
+    <main id="main-content">
+
+        <section class="hero" aria-label="Apresentação">
+            <div class="hero__content">
+                <p class="hero__eyebrow">Elegância & Identidade</p>
+                <h1 class="hero__title">FACCIONE MODAS</h1>
+                <p class="hero__description">Moda social masculina e feminina com curadoria exclusiva.</p>
+                <button type="button" class="btn" data-action="toggle-modal">SOLICITAR ATENDIMENTO</button>
+            </div>
+        </section>
+
+        <section id="colecoes" class="section collections" aria-labelledby="collections-title">
+            <div class="reveal">
+                <h2 id="collections-title" class="section__title">O ESSENCIAL DO LUXO</h2>
             </div>
 
-            <h1>FACCIONE MODAS</h1>
+            <div class="cards">
+                <article class="card reveal">
+                    <div class="card__img-box">
+                        <img class="card__img"
+                            src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?q=80&w=1200"
+                            alt="Coleção masculina" loading="lazy" decoding="async" />
+                    </div>
+                    <div class="card__content">
+                        <h3 class="card__title">MASCULINO</h3>
+                        <p class="card__subtitle">The Sharp Gentleman</p>
+                    </div>
+                </article>
 
-            <p>Moda social masculina e feminina com curadoria exclusiva.</p>
+                <article class="card reveal reveal--delay-1">
+                    <div class="card__img-box">
+                        <img class="card__img"
+                            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200"
+                            alt="Coleção feminina" loading="lazy" decoding="async" />
+                    </div>
+                    <div class="card__content">
+                        <h3 class="card__title">FEMININO</h3>
+                        <p class="card__subtitle">Elegância Social Premium</p>
+                    </div>
+                </article>
 
-            <a onclick="toggleModal()" class="btn">
-                SOLICITAR ATENDIMENTO
-            </a>
-        </div>
-    </section>
+                <article class="card reveal reveal--delay-2">
+                    <div class="card__img-box">
+                        <img class="card__img"
+                            src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200"
+                            alt="Coleção cerimônias" loading="lazy" decoding="async" />
+                    </div>
+                    <div class="card__content">
+                        <h3 class="card__title">CERIMÔNIAS</h3>
+                        <p class="card__subtitle">Eventos & Casamentos</p>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-    <section id="colecoes">
-        <div class="reveal">
-            <h2 class="section-title">O ESSENCIAL DO LUXO</h2>
-        </div>
-
-        <div class="cards">
-            <div class="card reveal">
-                <div class="card-img-box">
-                    <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?q=80&w=1200"
-                        alt="Masculino">
-                </div>
-                <div class="card-content">
-                    <h3>MASCULINO</h3>
-                    <p>The Sharp Gentleman</p>
-                </div>
+        <section id="sobre" class="section about" aria-labelledby="about-title">
+            <div class="reveal">
+                <img class="about__image"
+                    src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200"
+                    alt="Ambiente FACCIONE Modas" loading="lazy" decoding="async" />
             </div>
 
-            <div class="card reveal" style="transition-delay: 0.2s;">
-                <div class="card-img-box">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200"
-                        alt="Feminino">
-                </div>
-                <div class="card-content">
-                    <h3>FEMININO</h3>
-                    <p>Elegância Social Premium</p>
-                </div>
+            <div class="about__text reveal">
+                <h2 id="about-title" class="about__title">A ESSÊNCIA FACCIONE</h2>
+                <p>
+                    Nossa missão é vestir personalidades com perfeição técnica e estética atemporal.
+                </p>
+                <a href="#" class="btn">NOSSA HISTÓRIA</a>
             </div>
+        </section>
 
-            <div class="card reveal" style="transition-delay: 0.4s;">
-                <div class="card-img-box">
-                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200"
-                        alt="Cerimônias">
-                </div>
-                <div class="card-content">
-                    <h3>CERIMÔNIAS</h3>
-                    <p>Eventos & Casamentos</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>
 
-    <section class="sobre" id="sobre">
-        <div class="reveal">
-            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200" alt="Sobre">
-        </div>
+    <div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modal-title"
+        aria-hidden="true">
+        <div class="modal__content">
+            <button type="button" class="modal__close" data-action="close-modal" aria-label="Fechar contato">✕</button>
 
-        <div class="sobre-text reveal">
-            <h2 style="font-family:'Cormorant Garamond', serif; font-size: 3.5rem; margin-bottom: 20px;">
-                A ESSÊNCIA FACCIONE
-            </h2>
+            <h2 id="modal-title" class="modal__title">CONTATO</h2>
+            <p class="modal__subtitle">Atendimento Comercial</p>
 
-            <p>
-                Nossa missão é vestir personalidades com perfeição técnica e estética atemporal.
-            </p>
-
-            <a href="#" class="btn">NOSSA HISTÓRIA</a>
-        </div>
-    </section>
-
-    <div class="modal-overlay" id="contactModal">
-        <div class="modal-content">
-            <div class="modal-close" onclick="toggleModal()">✕</div>
-
-            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 10px;">
-                CONTATO
-            </h2>
-
-            <p
-                style="font-size: 0.7rem; letter-spacing: 3px; color: var(--gold); margin-bottom: 40px; text-transform: uppercase;">
-                Atendimento Comercial
-            </p>
-
-            <a href="https://wa.me/5519995204807" target="_blank" class="contact-link">
+            <a href="https://wa.me/5519995204807" target="_blank" rel="noopener noreferrer" class="contact-link">
                 WHATSAPP: (19) 99520-4807
             </a>
 
-            <a href="https://www.instagram.com/faccione__modas/" target="_blank" class="contact-link">
+            <a href="https://www.instagram.com/faccione__modas/" target="_blank" rel="noopener noreferrer"
+                class="contact-link">
                 INSTAGRAM: @faccione__modas
             </a>
 
-            <p
-                style="margin-top: 30px; font-family: 'Cormorant Garamond', serif; font-style: italic; color: #999;">
-                Será um prazer atendê-lo.
-            </p>
+            <p class="modal__footer-note">Será um prazer atendê-lo.</p>
         </div>
     </div>
 
-    <footer>
+    <footer class="site-footer">
         &copy; 2026 FACCIONE MODAS. DEFININDO O PADRÃO DA MODA SOCIAL.
     </footer>
 
-    <script>
-        // Header Background change on scroll
-        const navbar = document.getElementById("navbar");
-
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 100)
-                navbar.classList.add("active");
-            else
-                navbar.classList.remove("active");
-        });
-
-        // Modal Toggle Function
-        function toggleModal() {
-            const modal = document.getElementById("contactModal");
-            modal.classList.toggle("active");
-        }
-
-        // Close modal if clicking outside the white box
-        window.onclick = function (event) {
-            const modal = document.getElementById("contactModal");
-
-            if (event.target == modal)
-                modal.classList.remove("active");
-        }
-
-        // Scroll Reveal Animation
-        const reveal = () => {
-            const reveals = document.querySelectorAll(".reveal");
-
-            for (let i = 0; i < reveals.length; i++) {
-                let windowHeight = window.innerHeight;
-                let elementTop = reveals[i].getBoundingClientRect().top;
-
-                if (elementTop < windowHeight - 150)
-                    reveals[i].classList.add("active");
-            }
-        };
-
-        window.addEventListener("scroll", reveal);
-        reveal();
-    </script>
+    <script src="js/script.js" defer></script>
 
 </body>
 
-</html> 
+</html>
